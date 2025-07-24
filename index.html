@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Incontournables du Leadership</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+        
+        .book-card {
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            background: white;
+            position: relative;
+            transform: translateY(0);
+        }
+        
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .book-card .card-img-top {
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .book-card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+        
+        .book-card .card-body {
+            position: relative;
+            z-index: 2;
+            background: white;
+        }
+        
+        .book-card .card-footer {
+            background: transparent;
+            border-top: none;
+        }
+        
+        .badge-custom {
+            background-color: var(--accent-color);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+        
+        .annexe-table {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .annexe-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+        
+        .cta-button {
+            position: relative;
+            overflow: hidden;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .cta-button:hover::after {
+            left: 100%;
+        }
+        
+        .modal-content {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            border-bottom: none;
+        }
+        
+        .close {
+            color: white;
+            opacity: 1;
+        }
+        
+        .parallax-section {
+            background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') fixed;
+            background-size: cover;
+            padding: 100px 0;
+            position: relative;
+            color: white;
+        }
+        
+        .parallax-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+        }
+        
+        .parallax-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .flip-card {
+            perspective: 1000px;
+            height: 400px;
+        }
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .flip-card-back {
+            background: white;
+            transform: rotateY(180deg);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .floating-books {
+            position: relative;
+            height: 100px;
+            margin: 50px 0;
+        }
+        
+        .floating-book {
+            position: absolute;
+            width: 60px;
+            height: 80px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            animation: floatBook 8s infinite ease-in-out;
+            transform-origin: center bottom;
+        }
+        
+        @keyframes floatBook {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+        
+        .progress-bar-custom {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e9ecef;
+            margin-bottom: 15px;
+        }
+        
+        .progress-custom {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            transition: width 1s ease;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+            margin: 40px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 3px solid var(--secondary-color);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .tooltip-inner {
+            background-color: var(--primary-color);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .tooltip.bs-tooltip-auto[x-placement^=top] .arrow::before, 
+        .tooltip.bs-tooltip-top .arrow::before {
+            border-top-color: var(--primary-color);
+        }
+        
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 3rem 0;
+            }
+            
+            .book-card {
+                margin-bottom: 20px;
+            }
+            
+            .flip-card {
+                height: auto;
+                margin-bottom: 30px;
+            }
+            
+            .flip-card-inner {
+                transform-style: unset;
+            }
+            
+            .flip-card:hover .flip-card-inner {
+                transform: none;
+            }
+            
+            .flip-card-front, .flip-card-back {
+                position: relative;
+                transform: none;
+                backface-visibility: visible;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="floating-shapes">
+            <div class="shape" style="width: 100px; height: 100px; background: white; top: 20%; left: 10%; animation-delay: 0s;"></div>
+            <div class="shape" style="width: 150px; height: 150px; background: var(--secondary-color); top: 60%; left: 80%; animation-delay: 2s;"></div>
+            <div class="shape" style="width: 80px; height: 80px; background: var(--accent-color); top: 30%; left: 70%; animation-delay: 4s;"></div>
+        </div>
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">🌟 Les Incontournables du Leadership</h1>
+            <p class="lead mb-5 animate__animated animate__fadeInUp animate__delay-1s">Découvrez les 5 best-sellers qui ont transformé des millions de leaders à travers le monde</p>
+            <a href="#books" class="btn btn-light btn-lg cta-button animate__animated animate__fadeInUp animate__delay-2s">Explorer les livres</a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title animate__animated animate__fadeIn">🎯 Introduction</h2>
+                    <p class="lead">Dans un monde en constante évolution, <strong>le leadership</strong> n'est plus seulement une affaire de hiérarchie ou de charisme, mais une compétence stratégique fondée sur l'inspiration, la vision, l'intégrité et la capacité à résoudre des problèmes complexes.</p>
+                    <p>Qu'il s'agisse de guider une équipe, d'initier l'innovation ou de transformer une organisation, les meilleurs leaders partagent des valeurs fortes, une capacité d'adaptation, et un sens élevé de responsabilité.</p>
+                    <p>Voici une sélection de <strong>5 livres best-sellers</strong> qui ont marqué des millions de lecteurs dans le monde entier. Ces ouvrages offrent des <strong>principes concrets</strong>, des <strong>exemples inspirants</strong> et des <strong>outils pratiques</strong> pour toute personne désireuse de devenir un leader plus efficace, plus humain, et plus visionnaire.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Books Animation -->
+    <div class="floating-books container text-center">
+        <div class="floating-book" style="left: 10%; background-image: url('https://m.media-amazon.com/images/I/71Kily3ODVL._AC_UF1000,1000_QL80_.jpg'); animation-delay: 0s;"></div>
+        <div class="floating-book" style="left: 25%; background-image: url('https://m.media-amazon.com/images/I/81XQ1+pkLgL._AC_UF1000,1000_QL80_.jpg'); animation-delay: 1s;"></div>
+        <div class="floating-book" style="left: 40%; background-image: url('https://m.media-amazon.com/images/I/71Kily3ODVL._AC_UF1000,1000_QL80_.jpg'); animation-delay: 2s;"></div>
+        <div class="floating-book" style="left: 55%; background-image: url('https://m.media-amazon.com/images/I/81XQ1+pkLgL._AC_UF1000,1000_QL80_.jpg'); animation-delay: 3s;"></div>
+        <div class="floating-book" style="left: 70%; background-image: url('https://m.media-amazon.com/images/I/71Kily3ODVL._AC_UF1000,1000_QL80_.jpg'); animation-delay: 4s;"></div>
+    </div>
+
+    <!-- Books Section -->
+    <section id="books" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center section-title mb-5">📚 Les 5 Best-Sellers du Leadership</h2>
+            
+            <div class="row">
+                <!-- Book 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="book-card card h-100">
+                        <img src="https://m.media-amazon.com/images/I/71Kily3ODVL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Les 21 lois irréfutables du leadership">
+                        <div class="card-body">
+                            <span class="badge badge-custom mb-2">#1 Best Seller</span>
+                            <h5 class="card-title">Les 21 lois irréfutables du leadership</h5>
+                            <h6 class="card-subtitle mb-3 text-muted">John C. Maxwell</h6>
+                            <p class="card-text">John Maxwell synthétise des décennies de leadership dans 21 lois puissantes. Il démontre que le leadership est une compétence universelle qui repose sur la pratique et l'intentionnalité.</p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#book1Modal">En savoir plus</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="book-card card h-100">
+                        <img src="https://m.media-amazon.com/images/I/81XQ1+pkLgL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="L'étoffe des leaders">
+                        <div class="card-body">
+                            <span class="badge badge-custom mb-2">Classique</span>
+                            <h5 class="card-title">L'étoffe des leaders</h5>
+                            <h6 class="card-subtitle mb-3 text-muted">Stephen R. Covey</h6>
+                            <p class="card-text">Covey promeut un leadership basé sur des principes durables comme la justice, l'intégrité, la dignité humaine et le service. Pour lui, on ne peut bien diriger les autres sans d'abord se gouverner soi-même.</p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#book2Modal">En savoir plus</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="book-card card h-100">
+                        <img src="https://m.media-amazon.com/images/I/71Kily3ODVL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Leaders Eat Last">
+                        <div class="card-body">
+                            <span class="badge badge-custom mb-2">Innovant</span>
+                            <h5 class="card-title">Leaders Eat Last</h5>
+                            <h6 class="card-subtitle mb-3 text-muted">Simon Sinek</h6>
+                            <p class="card-text">Simon Sinek démontre que les meilleurs leaders créent des environnements de sécurité et de confiance, favorisant la coopération et la motivation intrinsèque.</p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#book3Modal">En savoir plus</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 4 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="book-card card h-100">
+                                    <img src="https://m.media-amazon.com/images/I/81XQ1+pkLgL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="The 5 Levels of Leadership">
+                                    <div class="card-body">
+                                        <span class="badge badge-custom mb-2">Progressif</span>
+                                        <h5 class="card-title">The 5 Levels of Leadership</h5>
+                                        <h6 class="card-subtitle mb-3 text-muted">John C. Maxwell</h6>
+                                        <p class="card-text">Maxwell définit 5 niveaux que tout leader peut gravir pour augmenter son impact.</p>
+                                    </div>
+                                    <div class="card-footer bg-transparent">
+                                        <button class="btn btn-sm btn-outline-primary">Survolez pour voir les niveaux</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Les 5 niveaux de leadership</h4>
+                                <ol class="text-start">
+                                    <li><strong>Position</strong> - autorité par le titre</li>
+                                    <li><strong>Permission</strong> - les gens vous suivent par choix</li>
+                                    <li><strong>Production</strong> - vous obtenez des résultats</li>
+                                    <li><strong>Développement</strong> - vous faites grandir les autres</li>
+                                    <li><strong>Pinnacle</strong> - influence durable et réputation d'excellence</li>
+                                </ol>
+                                <p class="mt-auto"><small>Pour auto-évaluer son niveau actuel et progresser avec méthode</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 5 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="book-card card h-100">
+                        <img src="https://m.media-amazon.com/images/I/71Kily3ODVL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Dare to Lead">
+                        <div class="card-body">
+                            <span class="badge badge-custom mb-2">Moderne</span>
+                            <h5 class="card-title">Dare to Lead</h5>
+                            <h6 class="card-subtitle mb-3 text-muted">Brené Brown</h6>
+                            <p class="card-text">Brené Brown nous invite à un leadership plus vulnérable, plus humain, et plus courageux. Elle défend la force du leadership émotionnel dans un monde où l'empathie et l'authenticité sont des leviers puissants.</p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#book5Modal">En savoir plus</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="book-card card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Évolution du Leadership</h5>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1989</div>
+                                    <h6>L'étoffe des leaders</h6>
+                                    <p>Covey introduit le leadership basé sur les principes</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1998</div>
+                                    <h6>Les 21 lois</h6>
+                                    <p>Maxwell codifie les lois fondamentales du leadership</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2014</div>
+                                    <h6>Leaders Eat Last</h6>
+                                    <p>Sinek apporte une perspective neuroscientifique</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2018</div>
+                                    <h6>Dare to Lead</h6>
+                                    <p>Brown introduit le leadership vulnérable</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section -->
+    <section class="parallax-section">
+        <div class="container">
+            <div class="row parallax-content">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="mb-4">"Le leadership n'est pas un titre ou une position, c'est une action et un exemple."</h2>
+                    <p class="lead mb-5">Découvrez comment ces livres peuvent transformer votre approche du leadership et vous aider à inspirer ceux qui vous entourent.</p>
+                    <a href="#annexe" class="btn btn-outline-light btn-lg cta-button">Voir les connexions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Annexe Section -->
+    <section id="annexe" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center section-title mb-5">📊 Annexe - Leadership, Innovation et Résolution de Problèmes</h2>
+            
+            <div class="row mb-5">
+                <div class="col-lg-6">
+                    <h4 class="mb-4">Une Connexion Indissociable</h4>
+                    <p>Le leadership moderne ne peut être dissocié de l'innovation et de la résolution de problèmes. Ces trois dimensions interagissent constamment pour créer des organisations résilientes et adaptatives.</p>
+                    <p>Un <strong>bon leader</strong> crée un climat propice à <strong>l'innovation</strong> en acceptant l'échec et en valorisant l'initiative. Un leader <strong>résout les problèmes</strong> de manière collective, en sollicitant les idées de son équipe.</p>
+                    <p>L'<strong>innovation durable</strong> ne peut exister sans <strong>leadership courageux</strong> pour porter la vision et gérer l'incertitude.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="progress-bar-custom">
+                        <div class="progress-custom" style="width: 90%;"></div>
+                    </div>
+                    <h6>Leadership <span class="float-end">90%</span></h6>
+                    
+                    <div class="progress-bar-custom">
+                        <div class="progress-custom" style="width: 80%;"></div>
+                    </div>
+                    <h6>Innovation <span class="float-end">80%</span></h6>
+                    
+                    <div class="progress-bar-custom">
+                        <div class="progress-custom" style="width: 85%;"></div>
+                    </div>
+                    <h6>Résolution de problèmes <span class="float-end">85%</span></h6>
+                    
+                    <div class="progress-bar-custom mt-4">
+                        <div class="progress-custom" style="width: 95%;"></div>
+                    </div>
+                    <h6>Impact combiné <span class="float-end">95%</span></h6>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="table-responsive annexe-table">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Dimension</th>
+                                    <th>Description</th>
+                                    <th>Compétences associées</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Leadership</strong></td>
+                                    <td>Capacité à inspirer, mobiliser et diriger une équipe vers un objectif commun.</td>
+                                    <td>Vision, influence, écoute, prise de décision</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Innovation</strong></td>
+                                    <td>Capacité à imaginer et concrétiser de nouvelles idées ou solutions utiles.</td>
+                                    <td>Créativité, gestion du changement, expérimentation</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Résolution de problèmes</strong></td>
+                                    <td>Aptitude à analyser, structurer et résoudre des situations complexes.</td>
+                                    <td>Esprit critique, méthode, adaptabilité, intelligence émotionnelle</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-lightbulb me-2"></i> Outils d'innovation</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>Design Thinking</strong> pour l'innovation centrée sur l'humain</li>
+                                <li class="list-group-item"><strong>Lean Startup</strong> pour valider rapidement les idées</li>
+                                <li class="list-group-item"><strong>Brainstorming</strong> structuré pour générer des idées</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-tasks me-2"></i> Outils de résolution</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>Management visuel</strong> (Kanban, mind maps)</li>
+                                <li class="list-group-item"><strong>Méthode des 5 pourquoi</strong> pour trouver les causes racines</li>
+                                <li class="list-group-item"><strong>Analyse SWOT</strong> pour évaluer les solutions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-users me-2"></i> Styles de leadership</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>Leadership transformationnel</strong> pour motiver et inspirer</li>
+                                <li class="list-group-item"><strong>Leadership serviteur</strong> centré sur les besoins de l'équipe</li>
+                                <li class="list-group-item"><strong>Leadership agile</strong> adapté aux environnements incertains</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title mb-4">🏁 Conclusion</h2>
+                    <p class="lead">Ces cinq ouvrages offrent des <strong>perspectives complémentaires</strong> sur le leadership : certains insistent sur les <strong>règles fondamentales</strong>, d'autres sur les <strong>valeurs profondes</strong>, ou encore sur le <strong>courage d'être soi-même</strong>.</p>
+                    <p>Ensemble, ils forment une <strong>boîte à outils</strong> essentielle pour tout professionnel souhaitant évoluer dans un monde incertain, où la <strong>vision</strong>, l'<strong>adaptabilité</strong>, et <strong>l'innovation</strong> sont clés.</p>
+                    <div class="mt-5">
+                        <button class="btn btn-primary btn-lg me-3 cta-button" data-bs-toggle="modal" data-bs-target="#contactModal">
+                            <i class="fas fa-book me-2"></i>Demander une fiche de lecture
+                        </button>
+                        <button class="btn btn-outline-primary btn-lg cta-button" data-bs-toggle="modal" data-bs-target="#trainingModal">
+                            <i class="fas fa-graduation-cap me-2"></i>Découvrir notre formation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="social-icons mb-4">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="mb-3">Découvrez d'autres ressources sur le leadership, l'innovation et le développement professionnel.</p>
+            <p class="mb-0"><small>© 2023 Les Incontournables du Leadership. Tous droits réservés.</small></p>
+        </div>
+    </footer>
+
+    <!-- Book Modals -->
+    <!-- Book 1 Modal -->
+    <div class="modal fade" id="book1Modal" tabindex="-1" aria-labelledby="book1ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="book1ModalLabel">Les 21 lois irréfutables du leadership</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="https://m.media-amazon.com/images/I/71Kily3ODVL._AC_UF1000,1000_QL80_.jpg" class="img-fluid mb-3" alt="Les 21 lois irréfutables du leadership">
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Auteur:</strong> John C. Maxwell</li>
+                                <li class="list-group-item"><strong>Année:</strong> 1998</li>
+                                <li class="list-group-item"><strong>Pages:</strong> 304</li>
+                                <li class="list-group-item"><strong>Note:</strong> 4.7/5</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-8">
+                            <h5>Principes clés</h5>
+                            <ul>
+                                <li><strong>Loi du couvercle</strong>: votre efficacité est limitée par votre capacité à diriger.</li>
+                                <li><strong>Loi de l'influence</strong>: être leader, c'est influencer les autres, pas dominer.</li>
+                                <li><strong>Loi de la croissance</strong>: les leaders investissent dans le développement des autres.</li>
+                                <li><strong>Loi du respect</strong>: les gens suivent naturellement les leaders plus forts qu'eux.</li>
+                                <li><strong>Loi de l'intuition</strong>: les leaders évaluent tout avec une mentalité de leadership.</li>
+                            </ul>
+                            <h5 class="mt-4">Utilité</h5>
+                            <p>Un guide pratique pour structurer son développement personnel en tant que leader. Maxwell offre des principes universels applicables dans tous les contextes organisationnels.</p>
+                            <h5 class="mt-4">Citation clé</h5>
+                            <blockquote class="blockquote bg-light p-3 rounded">
+                                <p>"Le leadership est une question d'influence, rien de plus, rien de moins."</p>
+                                <footer class="blockquote-footer">John C. Maxwell</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary">Acheter le livre</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book 2 Modal -->
+    <div class="modal fade" id="book2Modal" tabindex="-1" aria-labelledby="book2ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="book2ModalLabel">L'étoffe des leaders</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="https://m.media-amazon.com/images/I/81XQ1+pkLgL._AC_UF1000,1000_QL80_.jpg" class="img-fluid mb-3" alt="L'étoffe des leaders">
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Auteur:</strong> Stephen R. Covey</li>
+                                <li class="list-group-item"><strong>Année:</strong> 1989</li>
+                                <li class="list-group-item"><strong>Pages:</strong> 368</li>
+                                <li class="list-group-item"><strong>Note:</strong> 4.6/5</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-8">
+                            <h5>Concepts clés</h5>
+                            <ul>
+                                <li><strong>Leadership intérieur</strong>: le leader doit être aligné avec ses valeurs.</li>
+                                <li><strong>Vision systémique</strong>: un leader harmonise performance et éthique.</li>
+                                <li><strong>Croissance durable</strong>: encourager l'épanouissement à long terme.</li>
+                                <li><strong>Paradigmes</strong>: changer sa manière de voir le monde pour mieux le transformer.</li>
+                                <li><strong>Interdépendance</strong>: créer des relations gagnant-gagnant.</li>
+                            </ul>
+                            <h5 class="mt-4">Utilité</h5>
+                            <p>Pour ceux qui veulent être des leaders authentiques, dans la vie comme au travail. Covey offre une approche holistique du leadership basée sur des principes intemporels.</p>
+                            <h5 class="mt-4">Citation clé</h5>
+                            <blockquote class="blockquote bg-light p-3 rounded">
+                                <p>"Le leadership est un choix, pas une position."</p>
+                                <footer class="blockquote-footer">Stephen R. Covey</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary">Acheter le livre</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book 3 Modal -->
+    <div class="modal fade" id="book3Modal" tabindex="-1" aria-labelledby="book3ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="book3ModalLabel">Leaders Eat Last</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="https://m.media-amazon.com/images/I/71Kily3ODVL._AC_UF1000,1000_QL80_.jpg" class="img-fluid mb-3" alt="Leaders Eat Last">
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Auteur:</strong> Simon Sinek</li>
+                                <li class="list-group-item"><strong>Année:</strong> 2014</li>
+                                <li class="list-group-item"><strong>Pages:</strong> 368</li>
+                                <li class="list-group-item"><strong>Note:</strong> 4.7/5</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-8">
+                            <h5>Concepts clés</h5>
+                            <ul>
+                                <li><strong>Cercle de sécurité</strong>: les employés se sentent protégés, donc engagés.</li>
+                                <li><strong>Leadership altruiste</strong>: le leader est au service de l'équipe.</li>
+                                <li><strong>Neurosciences</strong>: comprendre la biologie de la motivation et du lien social.</li>
+                                <li><strong>Chimie de la confiance</strong>: comment l'ocytocine influence les relations.</li>
+                                <li><strong>Environnement de travail</strong>: créer des conditions pour l'épanouissement.</li>
+                            </ul>
+                            <h5 class="mt-4">Utilité</h5>
+                            <p>Pour instaurer une culture organisationnelle saine et pérenne. Sinek apporte une perspective scientifique unique sur ce qui fait les grands leaders.</p>
+                            <h5 class="mt-4">Citation clé</h5>
+                            <blockquote class="blockquote bg-light p-3 rounded">
+                                <p>"Les vrais leaders sacrifient leurs propres intérêts pour protéger et faire grandir ceux qui les entourent."</p>
+                                <footer class="blockquote-footer">Simon Sinek</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary">Acheter le livre</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book 5 Modal -->
+    <div class="modal fade" id="book5Modal" tabindex="-1" aria-labelledby="book5ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="book5ModalLabel">Dare to Lead</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="https://m.media-amazon.com/images/I/71Kily3ODVL._AC_UF1000,1000_QL80_.jpg" class="img-fluid mb-3" alt="Dare to Lead">
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Auteur:</strong> Brené Brown</li>
+                                <li class="list-group-item"><strong>Année:</strong> 2018</li>
+                                <li class="list-group-item"><strong>Pages:</strong> 320</li>
+                                <li class="list-group-item"><strong>Note:</strong> 4.8/5</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-8">
+                            <h5>Principes clés</h5>
+                            <ul>
+                                <li>La <strong>vulnérabilité</strong> n'est pas une faiblesse.</li>
+                                <li>Les <strong>conversations courageuses</strong> créent la confiance.</li>
+                                <li>La <strong>clarté</strong> est une preuve de bienveillance.</li>
+                                <li>Les <strong>valeurs</strong> doivent guider chaque décision.</li>
+                                <li>L'<strong>échec</strong> est une étape nécessaire vers l'innovation.</li>
+                            </ul>
+                            <h5 class="mt-4">Utilité</h5>
+                            <p>Pour leaders en quête d'authenticité et de leadership inclusif. Brown montre comment le courage et la vulnérabilité peuvent transformer les organisations.</p>
+                            <h5 class="mt-4">Citation clé</h5>
+                            <blockquote class="blockquote bg-light p-3 rounded">
+                                <p>"Le courage commence par se montrer vulnérable."</p>
+                                <footer class="blockquote-footer">Brené Brown</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary">Acheter le livre</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Demander une fiche de lecture</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nom complet</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="book" class="form-label">Livre(s) intéressant(s)</label>
+                            <select class="form-select" id="book" multiple>
+                                <option value="1">Les 21 lois irréfutables du leadership</option>
+                                <option value="2">L'étoffe des leaders</option>
+                                <option value="3">Leaders Eat Last</option>
+                                <option value="4">The 5 Levels of Leadership</option>
+                                <option value="5">Dare to Lead</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message supplémentaire</label>
+                            <textarea class="form-control" id="message" rows="3"></textarea>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="newsletter">
+                            <label class="form-check-label" for="newsletter">
+                                S'abonner à notre newsletter sur le leadership
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary">Envoyer la demande</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Training Modal -->
+    <div class="modal fade" id="trainingModal" tabindex="-1" aria-labelledby="trainingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="trainingModalLabel">Formation Leadership Excellence</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Programme de formation</h5>
+                            <ul class="list-group mb-4">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Les fondamentaux du leadership
+                                    <span class="badge bg-primary rounded-pill">1 jour</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Développer son influence
+                                    <span class="badge bg-primary rounded-pill">1 jour</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Leadership et innovation
+                                    <span class="badge bg-primary rounded-pill">2 jours</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Résolution de problèmes complexes
+                                    <span class="badge bg-primary rounded-pill">1 jour</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Coaching d'équipe
+                                    <span class="badge bg-primary rounded-pill">1 jour</span>
+                                </li>
+                            </ul>
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h6 class="card-title">Prochaine session</h6>
+                                    <p class="card-text"><i class="far fa-calendar-alt me-2"></i>15-20 octobre 2023</p>
+                                    <p class="card-text"><i class="fas fa-map-marker-alt me-2"></i>Paris ou en ligne</p>
+                                    <p class="card-text"><i class="fas fa-euro-sign me-2"></i>1 990 € HT</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Ce que vous apprendrez</h5>
+                            <ul class="list-group mb-4">
+                                <li class="list-group-item">Les principes des 5 livres best-sellers</li>
+                                <li class="list-group-item">Comment développer votre style de leadership</li>
+                                <li class="list-group-item">Techniques pour inspirer et motiver votre équipe</li>
+                                <li class="list-group-item">Méthodes pour favoriser l'innovation</li>
+                                <li class="list-group-item">Outils de résolution de problèmes</li>
+                            </ul>
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h6 class="card-title">Inclus dans la formation</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i>Manuel complet</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Fiches pratiques</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Accès à la communauté</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Certification</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Support après formation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary">S'inscrire à la formation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tooltip initialization
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+            
+            // Animate progress bars when they come into view
+            const progressBars = document.querySelectorAll('.progress-custom');
+            
+            const animateProgressBars = () => {
+                progressBars.forEach(bar => {
+                    const rect = bar.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                        const width = bar.style.width;
+                        bar.style.width = '0';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 100);
+                    }
+                });
+            };
+            
+            // Initial check
+            animateProgressBars();
+            
+            // Check on scroll
+            window.addEventListener('scroll', animateProgressBars);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Floating books animation
+            const books = document.querySelectorAll('.floating-book');
+            books.forEach((book, index) => {
+                // Randomize animation duration and delay
+                const duration = 8 + Math.random() * 4; // Between 8-12s
+                const delay = Math.random() * 5; // Up to 5s delay
+                
+                book.style.animation = `floatBook ${duration}s infinite ${delay}s ease-in-out`;
+                
+                // Randomize initial position slightly
+                const initialY = -10 + Math.random() * 20; // Between -10 to 10px
+                const initialRotate = -5 + Math.random() * 10; // Between -5 to 5deg
+                book.style.transform = `translateY(${initialY}px) rotate(${initialRotate}deg)`;
+            });
+            
+            // Show floating shapes in hero section
+            const shapes = document.querySelectorAll('.shape');
+            shapes.forEach(shape => {
+                shape.style.opacity = '0';
+                setTimeout(() => {
+                    shape.style.transition = 'opacity 1.5s ease';
+                    shape.style.opacity = '0.1';
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
